@@ -24,6 +24,11 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 local mytable = awful.util.table or gears.table -- 4.{0,1} compatibility
 
+-- require('configuration.client')
+-- root.keys(require('configuration.keys.global'))
+
+-- require('module.lockscreen')
+
 -- }}}
 
 -- {{{ Error handling
