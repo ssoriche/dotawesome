@@ -305,7 +305,7 @@ root.buttons(mytable.join(
 -- {{{ Key bindings
 
 globalkeys = mytable.join(
-    -- Destroy all notifications
+-- Destroy all notifications
     awful.key({ "Control" }, "space", function()
         naughty.destroy_all_notifications()
     end, { description = "destroy all notifications", group = "hotkeys" }),
@@ -605,7 +605,7 @@ globalkeys = mytable.join(
             history_path = awful.util.get_cache_dir() .. "/history_eval",
         })
     end, { description = "lua execute prompt", group = "awesome" })
-    --]]
+--]]
 )
 
 clientkeys = mytable.join(
