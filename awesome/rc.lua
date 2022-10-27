@@ -76,6 +76,7 @@ local function run_once(cmd_arr)
 end
 
 run_once({ "urxvtd", "unclutter -root", "copyq" }) -- comma-separated entries
+awful.spawn.with_shell("/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1")
 awful.spawn.with_shell("locker.sh")
 
 -- This function implements the XDG autostart specification
