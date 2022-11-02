@@ -7,3 +7,17 @@ client.connect_signal("request::manage", function(c)
     -- do something
     c:to_secondary_section()
 end)
+
+tag.connect_signal("property::selected", function (t)
+    local selected = tostring(t.selected) == "true"
+    if selected then
+        local mouseX = mouse.coords().x
+        local mouseY = mouse.coords().y
+        for k,v in pairs(t.screen.all_clients) do
+            if v.first_tag.index==t.index and mouseX>=v.x and mouseX<=(v.x+v.width) and mouseY>=v.y and mouseY<=(v.y+v.height) then
+                client.focus = v
+                v:raise()
+            end
+        end
+    end
+end)
