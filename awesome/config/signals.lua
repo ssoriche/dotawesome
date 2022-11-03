@@ -21,3 +21,13 @@ tag.connect_signal("property::selected", function (t)
         end
     end
 end)
+
+client.connect_signal("unmanage", function() focus_on_last_in_history(mouse.screen) end)
+
+function focus_on_last_in_history( screen )
+    local c = awful.client.focus.history.get(screen, 0)
+    if not (c == nil) then
+        client.focus = c
+        c:raise()
+    end
+end
